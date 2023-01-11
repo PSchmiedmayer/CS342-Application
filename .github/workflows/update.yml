@@ -1,0 +1,52 @@
+#
+# This source file is part of the Continous Delivery open source project
+#
+# SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+#
+# SPDX-License-Identifier: MIT
+#
+
+name: Swift Package and Fastlane Update
+
+on:
+  schedule:
+    - cron:  '0 0 1 * *'
+  workflow_dispatch:
+  
+jobs:
+  createPR:
+    name: Create Pull Request
+    runs-on: macos-12
+    steps:
+    - uses: actions/checkout@v3
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+    - name: Check Environment
+      run: |
+          xcodebuild -version
+          swift --version
+    - name: Update Swift Packages Shared
+      run: |
+        cd ./Shared
+        swift package update
+    - name: Update Swift Packages Web Service
+      run: |
+        cd ./WebService
+        swift package update
+    - name: Update Swift Packages Xcode Project
+      run: |
+        rm -f App.xcworkspace/xcshareddata/swiftpm/Package.resolved
+        xcodebuild -resolvePackageDependencies
+    - name: Update Fastlane
+      run: bundle update fastlane
+    - uses: peter-evans/create-pull-request@v4
+      with:
+        # Using an access token triggers GitHub actions in the create PR. Remove the token to use the GitHub Action bot to create the PR without triggering the GitHub Actions
+        token: ${{ secrets.ACCESS_TOKEN }}
+        commit-message: Update dependencies
+        title: Update dependencies
+        body: Update Fastlane and the Swift Package dependencies.
+        delete-branch: true
+        base: main
+        branch: bots/update-dependencies

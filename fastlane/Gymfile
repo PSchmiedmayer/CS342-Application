@@ -1,0 +1,25 @@
+#
+# This source file is part of the Continous Delivery open source project
+#
+# SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+#
+# SPDX-License-Identifier: MIT
+#
+
+# For more information about this configuration visit
+# https://docs.fastlane.tools/actions/gym/#gymfile
+
+# In general, you can use the options available
+# fastlane gym --help
+
+scheme("App")
+
+project("App/App.xcodeproj")
+
+export_options(
+  {
+    provisioningProfiles: { 
+      "com.schmiedmayer.continousdelivery" => "ContinousDelivery"
+    }
+  }
+)

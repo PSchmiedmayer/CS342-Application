@@ -1,0 +1,20 @@
+#
+# This source file is part of the App Continous Delivery open source project
+#
+# SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+#
+# SPDX-License-Identifier: MIT
+#
+
+changelog:
+  categories:
+    - title: Semantic Version Major
+      labels:
+        - needs version bump
+    - title: Semantic Version Minor
+      labels:
+        - bug
+        - enhancement
+    - title: Other Changes
+      labels:
+        - "*"

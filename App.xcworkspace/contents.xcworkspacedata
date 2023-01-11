@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:CONTRIBUTORS.md">
+   </FileRef>
+   <FileRef
+      location = "group:docker-compose.yml">
+   </FileRef>
+   <FileRef
+      location = "group:docker-compose-development.yml">
+   </FileRef>
+   <FileRef
+      location = "group:App/App.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Shared">
+   </FileRef>
+   <FileRef
+      location = "group:WebService">
+   </FileRef>
+</Workspace>
