@@ -1,7 +1,7 @@
 #
-# This source file is part of the Continous Delivery open source project
+# This source file is part of the StanfordBDHG Template Application project
 #
-# SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+# SPDX-FileCopyrightText: 2023 Stanford University
 #
 # SPDX-License-Identifier: MIT
 #
@@ -12,14 +12,14 @@
 # In general, you can use the options available
 # fastlane gym --help
 
-scheme("App")
+scheme("TemplateApplication")
 
-project("App/App.xcodeproj")
+project("TemplateApplication.xcodeproj")
 
 export_options(
   {
     provisioningProfiles: { 
-      "com.schmiedmayer.continousdelivery" => "ContinousDelivery"
+      "edu.stanford.templateapplication" => "TemplateApplication"
     }
   }
 )

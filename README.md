@@ -1,18 +1,34 @@
 <!--
 
-This source file is part of the Continous Delivery open source project
+This source file is part of the StanfordBDHG Template Application project
 
-SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+SPDX-FileCopyrightText: 2023 Stanford University
 
 SPDX-License-Identifier: MIT
 
 -->
 
+# Template Application
 
-# GitHub Action Continous Delivery Setup
+This repository contains the StanfordBDHG Template Application. It serves as a template repository for projects requiering a mobile application using a continous integration and continous delivery setup.
 
-This repository demonstrates a continous delivery (CD) setup including a web service, a shared Swift Package, and an iOS App.
+## Continous Delivery Workflows
 
+### Beta Deployment
+
+The Beta Deployment workflow is triggered when a new commit is added to the main branch. 
+
+It first runs the Build and Test workflow to ensure all tests are passing.
+Once the Build and Test workflow passes, it builds the iOS application so it can be archived and sent to [TestFlight](https://developer.apple.com/testflight/) for internal beta deployment.
+
+### Build and Test
+
+The Build and Test workflow builds and tests the iOS application, shared Swift package, and web service. It runs all unit and user interface (UI) tests defined in the targets. The iOS application is tested on the iOS simulator on macOS. The shared and web service Swift packages are tested on Linux and macOS as well as in release and debug configuration to demonstrate all possible variations. 
+
+### SwiftLint
+
+The Swiftlint workflow is triggered by every pull request (PR) and checks if the files found in the diff contain any [SwiftLint](https://github.com/realm/SwiftLint) violations.
+You can change the SwiftLint configuration in the `.swiftlint.yml` file found at the root of this repository.
 
 ## Continous Delivery Setup
 
@@ -48,39 +64,10 @@ Be sure that you update the name of the provisioning profile in the `Gymfile` an
 ### Swift Package and Fastlane Update ACCESS_TOKEN
 
 The [Swift Package and Fastlane Update workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/update.yml) requires an `ACCESS_TOKEN` secret: a GitHub Personal Access Token (PAT) allowing write access to the repository.
-I suggest using a bot account to create the access token. Using the PAT triggers the GitHub Actions in the create PR. [The GitHub documentation provides instructions on creating a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). The [scrop of the token](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps) can be limited to the `public_repo` scope for public repositories or the `repo` scrope for private repositories as well as the `workflow` scope.
+We suggest using a bot account to create the access token. Using the PAT triggers the GitHub Actions in the create PR. [The GitHub documentation provides instructions on creating a PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token). The [scrop of the token](https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps) can be limited to the `public_repo` scope for public repositories or the `repo` scrope for private repositories as well as the `workflow` scope.
 
 Removing the `token` input in the GitHub action workflow results in using the default `GITHUB_TOKEN` and the GitHub Action bot account that does not trigger any possible merge checks in the newly created PR.
 
-## Continous Delivery Workflows
+### Contributors
 
-### Beta Deployment
-
-The [Beta Deployment workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/beta-deployment.yml) is triggered when a new commit is added to the main branch. 
-
-It first runs the Build and Test workflow to ensure all tests are passing.
-Once the Build and Test workflow passes, it builds the iOS application so it can be archived and sent to [TestFlight](https://developer.apple.com/testflight/) for internal beta deployment.
-Once the Build and Test workflow passes, it also creates a new Docker image of the web service pushed to [GitHub Packages](https://docs.github.com/en/packages) using the `beta` tag.
-
-### Build and Test
-
-The [Build and Test workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/build-and-test.yml) builds and tests the iOS application, shared Swift package, and web service. It runs all unit and user interface (UI) tests defined in the targets. The iOS application is tested on the iOS simulator on macOS. The shared and web service Swift packages are tested on Linux and macOS as well as in release and debug configuration to demonstrate all possible variations. 
-
-### Release Deployment
-
-The [Release Deployment workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/release-deployment.yml) is triggered when a new tag is added to the repository. It uses the tag to create a new Docker image of the web service pushed to [GitHub Packages](https://docs.github.com/en/packages) using the added tag as well as the `latest` for tagging the Docker image. 
-
-### SwiftLint
-
-The [Swiftlint workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/swiftlint.yml) is triggered by every pull request (PR) and checks if the files found in the diff contain any [SwiftLint](https://github.com/realm/SwiftLint) violations.
-You can change the SwiftLint configuration in the [`.swiftlint.yml`](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.swiftlint.yml) file found at the root of this repository.
-
-### Swift Package and Fastlane Update
-
-The [Swift Package and Fastlane Update workflow](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/.github/workflows/update.yml) runs every month to update the Swift Package dependencies in the iOS application, web service, and shared Swift package. The workflow creates a PR that contains all the changes.
-
-## Contributing
-Contributions to this project are welcome!
-
-## License
-This project is licensed under the MIT License. See [License](https://github.com/PSchmiedmayer/ContinousDelivery/blob/main/LICENSE) for more information.
+This project is based on [ContinousDelivery Example by Paul Schmiedmayer](https://github.com/PSchmiedmayer/ContinousDelivery). You can find a list of contributors in the `CONTRIBUTORS.md` file.

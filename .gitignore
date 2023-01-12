@@ -1,7 +1,7 @@
 #
-# This source file is part of the Continous Delivery open source project
+# This source file is part of the StanfordBDHG Template Application project
 #
-# SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+# SPDX-FileCopyrightText: 2023 Stanford University
 #
 # SPDX-License-Identifier: MIT
 #
@@ -10,7 +10,7 @@
 *.xcodeproj
 .swiftpm
 .build/
-!App/App.xcodeproj
+!TemplateApplication.xcodeproj
 
 # IDE related folders
 .idea
@@ -24,3 +24,8 @@ xcuserdata/
 # Other files
 .DS_Store
 .env
+
+# Tests
+report.junit
+report.html
+TemplateApplication.xcresult

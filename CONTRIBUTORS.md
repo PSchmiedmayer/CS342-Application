@@ -1,14 +1,14 @@
 <!--
 
-This source file is part of the Continous Delivery open source project
+This source file is part of the StanfordBDHG Template Application project
 
-SPDX-FileCopyrightText: 2022 Paul Schmiedmayer <paul.schmiedmayer@tum.de>
+SPDX-FileCopyrightText: 2023 Stanford University
 
 SPDX-License-Identifier: MIT
 
 -->
 
-App Continous Deployment contributors
-====================
+Template Application Contributors
+=================================
 
 * [Paul Schmiedmayer](https://github.com/PSchmiedmayer)
