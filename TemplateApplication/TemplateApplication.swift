@@ -13,14 +13,7 @@ import SwiftUI
 struct TemplateApplication: App {
     var body: some Scene {
         WindowGroup {
-            VStack {
-                Image(systemName: "hand.wave.fill")
-                    .font(.system(size: 100))
-                    .foregroundColor(.accentColor)
-                    .padding()
-                Text("Welcome to the Template Application!")
-                    .bold()
-            }
+            MainView()
         }
     }
 }
