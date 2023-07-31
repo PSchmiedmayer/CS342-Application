@@ -32,6 +32,4 @@ jobs:
         echo -n "$BUILD_PROVISION_PROFILE_WATCHOS_BASE64" | base64 --decode -o $PP_WATCHOS_PATH
         cp $PP_WATCHOS_PATH ~/Library/MobileDevice/Provisioning\ Profiles
         
-        ls -a ~/Library/MobileDevice/Provisioning\ Profiles
-        
         fastlane beta
