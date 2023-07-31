@@ -25,5 +25,16 @@ jobs:
     secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
-      fastlanelane: beta
       setupsigning: true
+      customcommand: |
+        # Import watchOS provisioning profile
+        PP_WATCHOS_PATH=$RUNNER_TEMP/build_pp_watchos.mobileprovision
+        echo -n "$BUILD_PROVISION_PROFILE_WATCHOS_BASE64" | base64 --decode -o $PP_WATCHOS_PATH
+        cp $PP_WATCHOS_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+        
+        APP_STORE_CONNECT_API_KEY_ID=${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+        APP_STORE_CONNECT_ISSUER_ID=${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+        APP_STORE_CONNECT_API_KEY_BASE64=${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
+        APPLE_ID=${{ secrets.APPLE_ID }}
+
+        bundle exec fastlane beta

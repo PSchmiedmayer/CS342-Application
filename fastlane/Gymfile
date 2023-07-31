@@ -19,7 +19,8 @@ project("TemplateApplication.xcodeproj")
 export_options(
   {
     provisioningProfiles: { 
-      "edu.stanford.templateapplication" => "TemplateApplication"
+      "edu.stanford.templateapplication" => "TemplateApplication",
+      "edu.stanford.templateapplication.watchkitapp" => "TemplateApplicationWatchApp"
     }
   }
 )
