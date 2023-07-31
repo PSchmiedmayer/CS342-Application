@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "1E991C0E-B189-4B4F-BB18-7B4CC0662A64",
+      "id" : "87B6DF4C-B7A4-4371-A634-65B21054E7CC",
       "name" : "Default",
       "options" : {
 
@@ -11,23 +11,23 @@
   "defaultOptions" : {
     "targetForVariableExpansion" : {
       "containerPath" : "container:TemplateApplication.xcodeproj",
-      "identifier" : "653A254C283387FE005D4D48",
-      "name" : "TemplateApplication"
+      "identifier" : "2FF892342A7722F900903A5A",
+      "name" : "TemplateApplicationWatchApp"
     }
   },
   "testTargets" : [
     {
       "target" : {
         "containerPath" : "container:TemplateApplication.xcodeproj",
-        "identifier" : "653A255C28338800005D4D48",
-        "name" : "TemplateApplicationTests"
+        "identifier" : "2FF892432A7722FC00903A5A",
+        "name" : "TemplateApplicationWatchTests"
       }
     },
     {
       "target" : {
         "containerPath" : "container:TemplateApplication.xcodeproj",
-        "identifier" : "653A256628338800005D4D48",
-        "name" : "TemplateApplicationUITests"
+        "identifier" : "2FF8924D2A7722FC00903A5A",
+        "name" : "TemplateApplicationWatchAppUITests"
       }
     }
   ],

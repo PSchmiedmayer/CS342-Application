@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2FF892342A7722F900903A5A"
+               BuildableName = "TemplateApplicationWatchApp.app"
+               BlueprintName = "TemplateApplicationWatchApp"
+               ReferencedContainer = "container:TemplateApplication.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "653A254C283387FE005D4D48"
                BuildableName = "TemplateApplication.app"
                BlueprintName = "TemplateApplication"
@@ -29,7 +43,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:TemplateApplication.xctestplan"
+            reference = "container:TemplateApplicationWatchApp.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -38,9 +52,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "653A255C28338800005D4D48"
-               BuildableName = "TemplateApplicationTests.xctest"
-               BlueprintName = "TemplateApplicationTests"
+               BlueprintIdentifier = "2FF892432A7722FC00903A5A"
+               BuildableName = "TemplateApplicationWatchTests.xctest"
+               BlueprintName = "TemplateApplicationWatchTests"
                ReferencedContainer = "container:TemplateApplication.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -48,9 +62,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "653A256628338800005D4D48"
-               BuildableName = "TemplateApplicationUITests.xctest"
-               BlueprintName = "TemplateApplicationUITests"
+               BlueprintIdentifier = "2FF8924D2A7722FC00903A5A"
+               BuildableName = "TemplateApplicationWatchAppUITests.xctest"
+               BlueprintName = "TemplateApplicationWatchAppUITests"
                ReferencedContainer = "container:TemplateApplication.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -70,9 +84,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "653A254C283387FE005D4D48"
-            BuildableName = "TemplateApplication.app"
-            BlueprintName = "TemplateApplication"
+            BlueprintIdentifier = "2FF892342A7722F900903A5A"
+            BuildableName = "TemplateApplicationWatchApp.app"
+            BlueprintName = "TemplateApplicationWatchApp"
             ReferencedContainer = "container:TemplateApplication.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -87,9 +101,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "653A254C283387FE005D4D48"
-            BuildableName = "TemplateApplication.app"
-            BlueprintName = "TemplateApplication"
+            BlueprintIdentifier = "2FF892342A7722F900903A5A"
+            BuildableName = "TemplateApplicationWatchApp.app"
+            BlueprintName = "TemplateApplicationWatchApp"
             ReferencedContainer = "container:TemplateApplication.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
