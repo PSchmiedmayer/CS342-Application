@@ -14,5 +14,11 @@
 
 project("TemplateApplication.xcodeproj")
 scheme("TemplateApplication")
-devices(["iPhone 14 Pro"])
+devices(["iPhone 14 Pro", "iPad mini (6th generation)", "Apple Vision Pro"])
+force_quit_simulator(true)
+reset_simulator(true)
+prelaunch_simulator(true)
 skip_build(true)
+result_bundle(true)
+concurrent_workers(1)
+max_concurrent_simulators(1)
