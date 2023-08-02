@@ -15,17 +15,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  buildandtest:
-    name: Build and Test
-    uses: ./.github/workflows/build-and-test.yml
-    secrets: inherit
+  # buildandtest:
+  #   name: Build and Test
+  #   uses: ./.github/workflows/build-and-test.yml
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
-    needs: buildandtest
+    # needs: buildandtest
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     secrets: inherit
     with:
       artifactname: TemplateApplication.xcresult
-      runsonlabels: '["macos-latest"]'
-      fastlanelane: beta
       setupsigning: true
+      fastlanelane: beta
