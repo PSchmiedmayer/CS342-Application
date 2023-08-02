@@ -45,7 +45,7 @@ jobs:
       test: false
   uploadcoveragereport:
     name: Upload Coverage Report
-    needs: [ios, ipados, watchos]
+    needs: [ios, ipados]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: TemplateApplication.xcresult TemplateApplicationiPadOS.xcresult TemplateApplicationWatchApp.xcresult
+      coveragereports: TemplateApplication.xcresult TemplateApplicationiPadOS.xcresult
