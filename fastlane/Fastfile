@@ -17,8 +17,15 @@ platform :ios do
   desc "Build and test"
   lane :test do
     run_tests(
-      code_coverage: true,
+      skip_build: true,
       derived_data_path: ".derivedData",
+      code_coverage: true,
+      devices: ["iPhone 14 Pro", "iPad mini (6th generation)"],
+      force_quit_simulator: true,
+      reset_simulator: true,
+      prelaunch_simulator: true,
+      concurrent_workers: 1,
+      max_concurrent_simulators: 1,
       result_bundle: true,
       output_directory: "."
     )
@@ -27,7 +34,13 @@ platform :ios do
   desc "Build app"
   lane :build do
     build_app(
-      derived_data_path: ".derivedData"
+      derived_data_path: ".derivedData",
+      export_options: {
+        provisioningProfiles: { 
+          "edu.stanford.templateapplication" => "TemplateApplication",
+          "edu.stanford.templateapplication.watchkitapp" => "TemplateApplicationWatchApp"
+        }
+      }
     )
   end
 
@@ -45,8 +58,7 @@ platform :ios do
   lane :beta do
     signin
     increment_build_number({
-      build_number: latest_testflight_build_number + 1,
-      xcodeproj: "TemplateApplication.xcodeproj"
+      build_number: latest_testflight_build_number + 1
     })
     build
     commit = last_git_commit
