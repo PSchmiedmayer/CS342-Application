@@ -25,7 +25,6 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
       artifactname: TemplateApplication.xcresult
-      setupsigning: true
       fastlanelane: test
   visionos:
     name: Build and Test visionOS
@@ -38,7 +37,7 @@ jobs:
       test: false
   uploadcoveragereport:
     name: Upload Coverage Report
-    needs: [buildandtest]
+    needs: buildandtest
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
       coveragereports: TemplateApplication.xcresult
