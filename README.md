@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT
 [![codecov](https://codecov.io/gh/StanfordBDHG/Template-Application/branch/main/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/Template-Application)
 [![DOI](https://zenodo.org/badge/587923964.svg)](https://zenodo.org/badge/latestdoi/587923964)
 
-This repository contains the StanfordBDHG Template Application. It serves as a template repository for projects requiering a mobile application using a continous integration and continous delivery setup.
+This repository contains the StanfordBDHG Template Application. It serves as a template repository for projects requiring a mobile application using continuous integration and continuous delivery setup.
 
 ## Continous Delivery Workflows
 
@@ -36,7 +36,7 @@ You can change the SwiftLint configuration in the `.swiftlint.yml` file found at
 
 ## Continous Delivery Setup
 
-It is a prerequiesite to have access to a Apple Developer Account that allows [TestFlight](https://developer.apple.com/testflight/) releases and create a app in [App Store Connect](https://appstoreconnect.apple.com) that matches the bundle identifier you have defined in the App project.
+It is a prerequisite to have access to an Apple Developer Account that allows [TestFlight](https://developer.apple.com/testflight/) releases and create an app in [App Store Connect](https://appstoreconnect.apple.com) that matches the bundle identifier you have defined in the App project.
 
 ### App Store Connect Access
 
@@ -63,7 +63,7 @@ After following the setup steps detailed in [Installing an Apple certificate on 
 - `BUILD_PROVISION_PROFILE_BASE64`: The Base64 version of the Apple provisioning profile to build your iOS application.
 - `KEYCHAIN_PASSWORD`: A password for the keychain that will be created on the runner instance.
 
-Be sure that you update the name of the provisioning profile in the `Gymfile` and update the app name, bundle identifyer, Xcode project name, paths, and other settings in the fastlane files when modifying the template to your needs!
+Be sure that you update the name of the provisioning profile in the `Gymfile` and update the app name, bundle identifier, Xcode project name, paths, and other settings in the fastlane files when modifying the template to your needs!
 
 ### Swift Package and Fastlane Update ACCESS_TOKEN
 
