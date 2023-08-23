@@ -20,7 +20,7 @@ platform :ios do
       skip_build: true,
       derived_data_path: ".derivedData",
       code_coverage: true,
-      devices: ["iPhone 14 Pro", "iPad mini (6th generation)"],
+      devices: ["iPhone 14 Pro", "iPad mini (6th generation), Apple Watch Series 8 (45mm)"],
       force_quit_simulator: true,
       reset_simulator: true,
       prelaunch_simulator: true,
@@ -38,7 +38,7 @@ platform :ios do
       export_options: {
         provisioningProfiles: { 
           "edu.stanford.templateapplication" => "TemplateApplication",
-          "edu.stanford.templateapplication.watchkitapp" => "TemplateApplicationWatchApp"
+          "edu.stanford.templateapplication.watchkitapp" => "TemplateWatchApplication"
         }
       }
     )

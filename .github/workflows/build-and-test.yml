@@ -20,20 +20,14 @@ jobs:
   swiftlint:
     name: SwiftLint
     uses: StanfordBDHG/.github/.github/workflows/swiftlint.yml@v2
-  ios:
-    name: Build and Test iOS
+  buildandtest:
+    name: Build and Test
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
-      scheme: TemplateApplication
+      runsonlabels: '["macOS", "self-hosted"]'
+      xcodeversion: latest
+      fastlanelane: test
       artifactname: TemplateApplication.xcresult
-  ipados:
-    name: Build and Test iPadOS
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    with:
-      scheme: TemplateApplication
-      resultBundle: TemplateApplicationiPadOS.xcresult
-      destination: 'platform=iOS Simulator,name=iPad mini (6th generation)'
-      artifactname: TemplateApplicationiPadOS.xcresult
   visionos:
     name: Build and Test visionOS
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
@@ -43,17 +37,9 @@ jobs:
       scheme: TemplateApplication
       destination: 'platform=visionOS Simulator,name=Apple Vision Pro'
       test: false
-  watchos:
-    name: Build and Test watchOS
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    with:
-      scheme: TemplateApplicationWatchApp
-      resultBundle: TemplateApplicationWatchApp.xcresult
-      destination: 'platform=watchOS Simulator,name=Apple Watch Series 8 (45mm)'
-      artifactname: TemplateApplicationWatchApp.xcresult
   uploadcoveragereport:
     name: Upload Coverage Report
-    needs: [ios, ipados, watchos]
+    needs: [buildandtest]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: TemplateApplication.xcresult TemplateApplicationiPadOS.xcresult TemplateApplicationWatchApp.xcresult
+      coveragereports: TemplateApplication.xcresult
