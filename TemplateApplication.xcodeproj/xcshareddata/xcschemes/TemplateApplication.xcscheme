@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "653A254C283387FE005D4D48"
+               BlueprintIdentifier = "371BAA5929EFAB1900011A7C"
                BuildableName = "TemplateApplication.app"
                BlueprintName = "TemplateApplication"
                ReferencedContainer = "container:TemplateApplication.xcodeproj">
@@ -23,38 +23,11 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Test"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:TemplateApplication.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "653A255C28338800005D4D48"
-               BuildableName = "TemplateApplicationTests.xctest"
-               BlueprintName = "TemplateApplicationTests"
-               ReferencedContainer = "container:TemplateApplication.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "653A256628338800005D4D48"
-               BuildableName = "TemplateApplicationUITests.xctest"
-               BlueprintName = "TemplateApplicationUITests"
-               ReferencedContainer = "container:TemplateApplication.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -70,7 +43,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "653A254C283387FE005D4D48"
+            BlueprintIdentifier = "371BAA5929EFAB1900011A7C"
             BuildableName = "TemplateApplication.app"
             BlueprintName = "TemplateApplication"
             ReferencedContainer = "container:TemplateApplication.xcodeproj">
@@ -87,7 +60,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "653A254C283387FE005D4D48"
+            BlueprintIdentifier = "371BAA5929EFAB1900011A7C"
             BuildableName = "TemplateApplication.app"
             BlueprintName = "TemplateApplication"
             ReferencedContainer = "container:TemplateApplication.xcodeproj">
