@@ -11,7 +11,7 @@
   "defaultOptions" : {
     "targetForVariableExpansion" : {
       "containerPath" : "container:TemplateApplication.xcodeproj",
-      "identifier" : "653A254C283387FE005D4D48",
+      "identifier" : "371BAA5929EFAB1900011A7C",
       "name" : "TemplateApplication"
     }
   },
@@ -19,15 +19,8 @@
     {
       "target" : {
         "containerPath" : "container:TemplateApplication.xcodeproj",
-        "identifier" : "653A255C28338800005D4D48",
+        "identifier" : "2FEC3D612A9680EF0084272E",
         "name" : "TemplateApplicationTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:TemplateApplication.xcodeproj",
-        "identifier" : "653A256628338800005D4D48",
-        "name" : "TemplateApplicationUITests"
       }
     }
   ],
