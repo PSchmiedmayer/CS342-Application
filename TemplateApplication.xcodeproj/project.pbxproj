@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F709F802A96836500086E61 /* TemplateApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F709F7F2A96836500086E61 /* TemplateApplicationUITests.swift */; };
 		2FC27AA52A967534004B6129 /* TemplateApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC27AA32A967534004B6129 /* TemplateApplication.swift */; };
 		2FC27AA62A967534004B6129 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC27AA42A967534004B6129 /* MainView.swift */; };
 		2FEC3D652A9680EF0084272E /* TemplateApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC3D642A9680EF0084272E /* TemplateApplicationTests.swift */; };
@@ -14,6 +15,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2F709F832A96836500086E61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 371BAA5929EFAB1900011A7C;
+			remoteInfo = TemplateApplication;
+		};
 		2FEC3D662A9680EF0084272E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 371BAA5229EFAB1900011A7C /* Project object */;
@@ -24,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F709F7D2A96836500086E61 /* TemplateApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F709F7F2A96836500086E61 /* TemplateApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplicationUITests.swift; sourceTree = "<group>"; };
 		2FC27AA02A9673A0004B6129 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2FC27AA22A96740E004B6129 /* MIT.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = MIT.txt; sourceTree = "<group>"; };
 		2FC27AA32A967534004B6129 /* TemplateApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateApplication.swift; sourceTree = "<group>"; };
@@ -37,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F709F7A2A96836500086E61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FEC3D5F2A9680EF0084272E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -54,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F709F7E2A96836500086E61 /* TemplateApplicationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2F709F7F2A96836500086E61 /* TemplateApplicationUITests.swift */,
+			);
+			path = TemplateApplicationUITests;
+			sourceTree = "<group>";
+		};
 		2FC27AA12A96740E004B6129 /* LICENSES */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +102,7 @@
 				2FEC3D6B2A96815E0084272E /* TemplateApplication.xctestplan */,
 				371BAA5C29EFAB1900011A7C /* TemplateApplication */,
 				2FEC3D632A9680EF0084272E /* TemplateApplicationTests */,
+				2F709F7E2A96836500086E61 /* TemplateApplicationUITests */,
 				371BAA5B29EFAB1900011A7C /* Products */,
 				2FC27AA12A96740E004B6129 /* LICENSES */,
 			);
@@ -87,6 +113,7 @@
 			children = (
 				371BAA5A29EFAB1900011A7C /* TemplateApplication.app */,
 				2FEC3D622A9680EF0084272E /* TemplateApplicationTests.xctest */,
+				2F709F7D2A96836500086E61 /* TemplateApplicationUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +132,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F709F7C2A96836500086E61 /* TemplateApplicationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F709F872A96836500086E61 /* Build configuration list for PBXNativeTarget "TemplateApplicationUITests" */;
+			buildPhases = (
+				2F709F792A96836500086E61 /* Sources */,
+				2F709F7A2A96836500086E61 /* Frameworks */,
+				2F709F7B2A96836500086E61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F709F842A96836500086E61 /* PBXTargetDependency */,
+			);
+			name = TemplateApplicationUITests;
+			productName = TemplateApplicationUITests;
+			productReference = 2F709F7D2A96836500086E61 /* TemplateApplicationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		2FEC3D612A9680EF0084272E /* TemplateApplicationTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FEC3D6A2A9680EF0084272E /* Build configuration list for PBXNativeTarget "TemplateApplicationTests" */;
@@ -151,6 +196,10 @@
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
+					2F709F7C2A96836500086E61 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 371BAA5929EFAB1900011A7C;
+					};
 					2FEC3D612A9680EF0084272E = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = 371BAA5929EFAB1900011A7C;
@@ -175,11 +224,19 @@
 			targets = (
 				371BAA5929EFAB1900011A7C /* TemplateApplication */,
 				2FEC3D612A9680EF0084272E /* TemplateApplicationTests */,
+				2F709F7C2A96836500086E61 /* TemplateApplicationUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F709F7B2A96836500086E61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FEC3D602A9680EF0084272E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +255,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F709F792A96836500086E61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F709F802A96836500086E61 /* TemplateApplicationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2FEC3D5E2A9680EF0084272E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +283,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2F709F842A96836500086E61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 371BAA5929EFAB1900011A7C /* TemplateApplication */;
+			targetProxy = 2F709F832A96836500086E61 /* PBXContainerItemProxy */;
+		};
 		2FEC3D672A9680EF0084272E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 371BAA5929EFAB1900011A7C /* TemplateApplication */;
@@ -226,6 +296,52 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2F709F852A96836500086E61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637867499T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.templateapplication.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TEST_TARGET_NAME = TemplateApplication;
+			};
+			name = Debug;
+		};
+		2F709F862A96836500086E61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 637867499T;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.templateapplication.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,3,4";
+				TEST_TARGET_NAME = TemplateApplication;
+			};
+			name = Release;
+		};
 		2FEC3D682A9680EF0084272E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -236,7 +352,7 @@
 				DEVELOPMENT_TEAM = 637867499T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.TemplateApplicationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.templateapplication.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
@@ -259,7 +375,7 @@
 				DEVELOPMENT_TEAM = 637867499T;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.TemplateApplicationTests;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.templateapplication.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
@@ -488,6 +604,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F709F872A96836500086E61 /* Build configuration list for PBXNativeTarget "TemplateApplicationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F709F852A96836500086E61 /* Debug */,
+				2F709F862A96836500086E61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2FEC3D6A2A9680EF0084272E /* Build configuration list for PBXNativeTarget "TemplateApplicationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
