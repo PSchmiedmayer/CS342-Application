@@ -35,6 +35,7 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
+      destination: "generic/platform=iOS",
       export_options: {
         signingStyle: "manual",
         export_method: "app-store",
