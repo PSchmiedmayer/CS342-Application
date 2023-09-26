@@ -36,9 +36,10 @@ platform :ios do
     build_app(
       derived_data_path: ".derivedData",
       export_options: {
+        signingStyle: "manual",
         provisioningProfiles: { 
           "edu.stanford.templateapplication" => "TemplateApplication",
-          "edu.stanford.templateapplication.watchkitapp" => "TemplateWatchApplication"
+          "edu.stanford.templateapplication.watchapp" => "TemplateWatchApplication"
         }
       }
     )
