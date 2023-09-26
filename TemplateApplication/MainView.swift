@@ -13,6 +13,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             Image(systemName: "hand.wave.fill")
+                .accessibilityLabel(Text("Hand waving"))
                 .font(.system(size: 100))
                 .foregroundColor(.accentColor)
                 .padding()
