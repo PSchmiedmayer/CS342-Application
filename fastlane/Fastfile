@@ -33,9 +33,6 @@ platform :ios do
 
   desc "Build app"
   lane :build do
-    install_provisioning_profile(path: "~/Library/MobileDevice/Provisioning\ Profiles/build_pp.mobileprovision")
-    install_provisioning_profile(path: "~/Library/MobileDevice/Provisioning\ Profiles/TemplateWatchApplication.mobileprovision")
-    
     build_app(
       derived_data_path: ".derivedData",
       destination: "generic/platform=iOS",
