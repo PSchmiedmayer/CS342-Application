@@ -34,14 +34,7 @@ platform :ios do
   desc "Build app"
   lane :build do
     build_app(
-      derived_data_path: ".derivedData",
-      export_options: {
-        signingStyle: "manual",
-        provisioningProfiles: { 
-          "edu.stanford.templateapplication" => "TemplateApplication",
-          "edu.stanford.templateapplication.watchapp" => "TemplateWatchApplication"
-        }
-      }
+      derived_data_path: ".derivedData"
     )
   end
 
