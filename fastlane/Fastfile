@@ -52,17 +52,17 @@ platform :ios do
   desc "Publish a beta release to internal TestFlight testers"
   lane :beta do
     build
-    # signin
-    # commit = last_git_commit
-    # upload_to_testflight(
-    #   distribute_external: true,
-    #   groups: [
-    #     "External Testers"
-    #   ],
-    #   submit_beta_review: true,
-    #   notify_external_testers: true,
-    #   expire_previous_builds: true,
-    #   changelog: commit[:message]
-    # )
+    signin
+    commit = last_git_commit
+    upload_to_testflight(
+      distribute_external: true,
+      groups: [
+        "External Testers"
+      ],
+      submit_beta_review: true,
+      notify_external_testers: true,
+      expire_previous_builds: true,
+      changelog: commit[:message]
+    )
   end
 end
