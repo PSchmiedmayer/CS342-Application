@@ -35,16 +35,7 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
-      destination: "generic/platform=iOS",
-      export_options: {
-        signingStyle: "manual",
-        export_method: "app-store",
-        codesigning_identity: "Apple Distribution: Paul Schmiedmayer (637867499T)",
-        provisioningProfiles: { 
-          "edu.stanford.templateapplication" => "TemplateApplication",
-          "edu.stanford.templateapplication.watchapp" => "TemplateWatchApplication"
-        }
-      }
+      destination: "generic/platform=iOS"
     )
   end
 
