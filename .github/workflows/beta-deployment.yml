@@ -31,7 +31,7 @@ jobs:
         # Import watchOS provisioning profile
         PP_WATCHOS_PATH=$RUNNER_TEMP/build_pp_watchos.mobileprovision
         echo -n "$BUILD_PROVISION_PROFILE_WATCHOS_BASE64" | base64 --decode -o $PP_WATCHOS_PATH
-        sleep 30
+        sleep 300
         WATCHOS_UUID=`grep UUID -A1 -a $PP_WATCHOS_PATH | grep -io "[-A-F0-9]\{36\}"`
         sleep 30
         cp $PP_WATCHOS_PATH ~/Library/MobileDevice/Provisioning\ Profiles/$WATCHOS_UUID.mobileprovision
