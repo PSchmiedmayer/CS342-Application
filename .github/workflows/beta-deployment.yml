@@ -21,7 +21,7 @@ jobs:
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     # needs: buildandtest
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@provisioningProfile
     secrets: inherit
     with:
       runsonlabels: '["macOS", "self-hosted"]'
@@ -31,6 +31,7 @@ jobs:
         # Import watchOS provisioning profile
         PP_WATCHOS_PATH=$RUNNER_TEMP/build_pp_watchos.mobileprovision
         echo -n "$BUILD_PROVISION_PROFILE_WATCHOS_BASE64" | base64 --decode -o $PP_WATCHOS_PATH
-        cp $PP_WATCHOS_PATH ~/Library/MobileDevice/Provisioning\ Profiles
+        UUID=`grep UUID -A1 -a $PP_WATCHOS_PATH | grep -io "[-A-F0-9]\{36\}"`
+        cp $PP_WATCHOS_PATH ~/Library/MobileDevice/Provisioning\ Profiles/$UUID.mobileprovision
         
         fastlane beta
