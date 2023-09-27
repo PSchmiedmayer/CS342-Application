@@ -58,10 +58,6 @@
 
 /* Begin PBXFileReference section */
 		2F7025C42A969AC9007C36EF /* TemplateWatchApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateWatchApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F7025C62A969AC9007C36EF /* TemplateWatchApplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateWatchApplicationApp.swift; sourceTree = "<group>"; };
-		2F7025C82A969AC9007C36EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2F7025CA2A969ACA007C36EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2F7025CD2A969ACA007C36EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2F709F7D2A96836500086E61 /* TemplateApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F709F7F2A96836500086E61 /* TemplateApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApplicationUITests.swift; sourceTree = "<group>"; };
 		2FC27AA02A9673A0004B6129 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -108,25 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F7025C52A969AC9007C36EF /* TemplateWatchApplication Watch App */ = {
-			isa = PBXGroup;
-			children = (
-				2F7025C62A969AC9007C36EF /* TemplateWatchApplicationApp.swift */,
-				2F7025C82A969AC9007C36EF /* ContentView.swift */,
-				2F7025CA2A969ACA007C36EF /* Assets.xcassets */,
-				2F7025CC2A969ACA007C36EF /* Preview Content */,
-			);
-			path = "TemplateWatchApplication Watch App";
-			sourceTree = "<group>";
-		};
-		2F7025CC2A969ACA007C36EF /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				2F7025CD2A969ACA007C36EF /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		2F709F7E2A96836500086E61 /* TemplateApplicationUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +136,6 @@
 				371BAA5C29EFAB1900011A7C /* TemplateApplication */,
 				2FEC3D632A9680EF0084272E /* TemplateApplicationTests */,
 				2F709F7E2A96836500086E61 /* TemplateApplicationUITests */,
-				2F7025C52A969AC9007C36EF /* TemplateWatchApplication Watch App */,
 				371BAA5B29EFAB1900011A7C /* Products */,
 				2FC27AA12A96740E004B6129 /* LICENSES */,
 			);
