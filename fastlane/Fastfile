@@ -37,18 +37,20 @@ platform :ios do
       derived_data_path: ".derivedData",
       destination: "generic/platform=iOS",
       output_directory: ".build",
-      output_name: "TemplateApplication.ipa",
-      configuration: "Release",
-      export_options: {
-        method: "app-store",
-        signingStyle: "manual",
-        signingCertificate: "Apple Distribution: Paul Schmiedmayer (637867499T)",
-        provisioningProfiles: {
-          "edu.stanford.templateapplication" => "TemplateApplication",
-          "edu.stanford.templateapplication.watchapp" => "TemplateWatchApplication"
-        }
-      }
+      archive_path: ".build/TemplateApplication.xcarchive",
     )
+    # This is an unfortunate workaround for a bug in fastlane: https://github.com/fastlane/fastlane/pull/21319
+    Dir.chdir("..") do
+      sh(
+        "
+        xcodebuild \
+          -exportArchive \
+          -exportOptionsPlist ./fastlane/ExportOptions.plist \
+          -archivePath ./.build/TemplateApplication.xcarchive \
+          -exportPath ./.build/TemplateApplication.ipa
+        "
+      )
+    end
   end
 
   desc "Sign in to the App Store Connect API"
@@ -67,6 +69,7 @@ platform :ios do
     signin
     commit = last_git_commit
     upload_to_testflight(
+      ipa: "./.build/TemplateApplication.ipa",
       distribute_external: true,
       groups: [
         "External Testers"
