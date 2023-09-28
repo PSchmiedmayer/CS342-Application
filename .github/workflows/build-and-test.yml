@@ -20,20 +20,12 @@ jobs:
   swiftlint:
     name: SwiftLint
     uses: StanfordBDHG/.github/.github/workflows/swiftlint.yml@v2
-  ios:
-    name: Build and Test iOS
+  buildandtest:
+    name: Build and Test
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
-      scheme: TemplateApplication
+      fastlanelane: test
       artifactname: TemplateApplication.xcresult
-  ipados:
-    name: Build and Test iPadOS
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    with:
-      scheme: TemplateApplication
-      resultBundle: TemplateApplicationiPadOS.xcresult
-      destination: 'platform=iOS Simulator,name=iPad mini (6th generation)'
-      artifactname: TemplateApplicationiPadOS.xcresult
   visionos:
     name: Build and Test visionOS
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
@@ -45,7 +37,7 @@ jobs:
       test: false
   uploadcoveragereport:
     name: Upload Coverage Report
-    needs: [ios, ipados]
+    needs: [buildandtest]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: TemplateApplication.xcresult TemplateApplicationiPadOS.xcresult
+      coveragereports: TemplateApplication.xcresult

@@ -20,10 +20,10 @@ platform :ios do
       skip_build: true,
       derived_data_path: ".derivedData",
       code_coverage: true,
-      devices: ["iPhone 14 Pro", "iPad mini (6th generation)"],
+      devices: ["iPhone 14 Pro", "iPad mini (6th generation)", "Apple Watch Series 8 (45mm)"],
       force_quit_simulator: true,
       reset_simulator: true,
-      prelaunch_simulator: true,
+      prelaunch_simulator: false,
       concurrent_workers: 1,
       max_concurrent_simulators: 1,
       result_bundle: true,
@@ -35,12 +35,22 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
-      export_options: {
-        provisioningProfiles: { 
-          "edu.stanford.templateapplication" => "TemplateApplication"
-        }
-      }
+      destination: "generic/platform=iOS",
+      output_directory: ".build",
+      archive_path: ".build/TemplateApplication.xcarchive",
     )
+    # This is an unfortunate workaround for a bug in fastlane: https://github.com/fastlane/fastlane/pull/21319
+    Dir.chdir("..") do
+      sh(
+        "
+        xcodebuild \
+          -exportArchive \
+          -exportOptionsPlist ./fastlane/ExportOptions.plist \
+          -archivePath ./.build/TemplateApplication.xcarchive \
+          -exportPath ./.build
+        "
+      )
+    end
   end
 
   desc "Sign in to the App Store Connect API"
@@ -56,12 +66,15 @@ platform :ios do
   desc "Publish a beta release to internal TestFlight testers"
   lane :beta do
     signin
-    increment_build_number({
-      build_number: latest_testflight_build_number + 1
-    })
+    increment_build_number(
+      {
+        build_number: latest_testflight_build_number + 1
+      }
+    )
     build
     commit = last_git_commit
     upload_to_testflight(
+      ipa: "./.build/TemplateApplication.ipa",
       distribute_external: true,
       groups: [
         "External Testers"
