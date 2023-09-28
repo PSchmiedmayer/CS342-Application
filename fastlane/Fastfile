@@ -47,7 +47,7 @@ platform :ios do
           -exportArchive \
           -exportOptionsPlist ./fastlane/ExportOptions.plist \
           -archivePath ./.build/TemplateApplication.xcarchive \
-          -exportPath ./.build/TemplateApplication.ipa
+          -exportPath ./.build
         "
       )
     end
