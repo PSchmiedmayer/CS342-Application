@@ -24,7 +24,7 @@ struct MainView: View {
 }
 
 
-#if DEBUG
+#if swift(>=5.9)
 #Preview {
     MainView()
 }
