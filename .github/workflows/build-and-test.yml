@@ -20,10 +20,23 @@ jobs:
   swiftlint:
     name: SwiftLint
     uses: StanfordBDHG/.github/.github/workflows/swiftlint.yml@v2
+  codeql:
+    name: CodeQL
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    with:
+      codeql: true
+      xcodeversion: '14.3.1'
+      fastlanelane: codeql
+    permissions:
+      security-events: write
+      actions: read
   buildandtest:
     name: Build and Test
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
+      # We use the self-hosted runners as the main GitHub Action runners do not have the necessary performance.
+      # Remove the `runsonlabels: '["macOS", "self-hosted"]'` lines if you do not administer your own GitHub Runners.
+      runsonlabels: '["macOS", "self-hosted"]'
       fastlanelane: test
       artifactname: TemplateApplication.xcresult
   visionos:
