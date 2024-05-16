@@ -25,7 +25,6 @@ jobs:
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     with:
       codeql: true
-      xcodeversion: '14.3.1'
       fastlanelane: codeql
     permissions:
       security-events: write
@@ -33,24 +32,20 @@ jobs:
   buildandtest:
     name: Build and Test
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
+    strategy:
+      matrix:
+        platform: [iphone, ipad, apple_watch, apple_tv, vision_pro]
     with:
       # We use the self-hosted runners as the main GitHub Action runners do not have the necessary performance.
       # Remove the `runsonlabels: '["macOS", "self-hosted"]'` lines if you do not administer your own GitHub Runners.
       runsonlabels: '["macOS", "self-hosted"]'
-      fastlanelane: test
-      artifactname: TemplateApplication.xcresult
-  visionos:
-    name: Build and Test visionOS
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    with:
-      runsonlabels: '["macOS", "self-hosted"]'
-      xcodeversion: latest
-      scheme: TemplateApplication
-      destination: 'platform=visionOS Simulator,name=Apple Vision Pro'
-      test: false
+      fastlanelane: test-${{ matrix.platform }}
+      artifactname: TemplateApplication-${{ matrix.platform }}.xcresult
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: [buildandtest]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: TemplateApplication.xcresult
+      coveragereports: TemplateApplication-iphone.xcresult TemplateApplication-ipad.xcresult TemplateApplication-apple_watch.xcresult TemplateApplication-apple_tv.xcresult TemplateApplication-vision_pro.xcresult
+    secrets:
+      token: ${{ secrets.CODECOV_TOKEN }}

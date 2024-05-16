@@ -23,6 +23,46 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Build and test
 
+### ios test_iphone
+
+```sh
+[bundle exec] fastlane ios test_iphone
+```
+
+Build and test for iPhone
+
+### ios test_ipad
+
+```sh
+[bundle exec] fastlane ios test_ipad
+```
+
+Build and test for iPad
+
+### ios test_watch
+
+```sh
+[bundle exec] fastlane ios test_watch
+```
+
+Build and test for Watch
+
+### ios test_visionos
+
+```sh
+[bundle exec] fastlane ios test_visionos
+```
+
+Build and test for VisionOS
+
+### ios codeql
+
+```sh
+[bundle exec] fastlane ios codeql
+```
+
+CodeQL
+
 ### ios build
 
 ```sh

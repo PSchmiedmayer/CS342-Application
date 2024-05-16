@@ -16,11 +16,45 @@ platform :ios do
 
   desc "Build and test"
   lane :test do
+    test_iphone
+    test_ipad
+    test_apple_watch
+    test_apple_tv
+    test_vision_pro
+  end
+
+  desc "Build and test for iPhone"
+  lane :test_iphone do
+    private_test(devices: ["iPhone 15 Pro"])
+  end
+
+  desc "Build and test for iPad"
+  lane :test_ipad do
+    private_test(devices: ["iPad mini (6th generation)"])
+  end
+
+  desc "Build and test for Apple Watch"
+  lane :test_apple_watch do
+    private_test(devices: ["Apple Watch Series 8 (45mm)"])
+  end
+
+  desc "Build and test for Apple TV"
+  lane :test_apple_tv do
+    private_test(devices: ["Apple TV 4K (3rd generation)"])
+  end
+
+  desc "Build and test for Vision Pro"
+  lane :test_vision_pro do
+    private_test(devices: ["Apple Vision Pro"])
+  end
+
+  desc "Internal build and test lane"
+  private_lane :private_test do |options|
     run_tests(
       skip_build: true,
       derived_data_path: ".derivedData",
       code_coverage: true,
-      devices: ["iPhone 14 Pro", "iPad mini (6th generation)", "Apple Watch Series 8 (45mm)"],
+      devices: options[:devices],
       force_quit_simulator: true,
       reset_simulator: true,
       prelaunch_simulator: false,
