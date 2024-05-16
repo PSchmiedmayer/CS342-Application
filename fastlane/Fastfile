@@ -25,27 +25,27 @@ platform :ios do
 
   desc "Build and test for iPhone"
   lane :test_iphone do
-    private_test(devices: ["iPhone 15 Pro"])
+    private_test(devices: ["iPhone 15 Pro"], result: "iphone")
   end
 
   desc "Build and test for iPad"
   lane :test_ipad do
-    private_test(devices: ["iPad mini (6th generation)"])
+    private_test(devices: ["iPad mini (6th generation)"], result: "ipad")
   end
 
   desc "Build and test for Apple Watch"
   lane :test_apple_watch do
-    private_test(devices: ["Apple Watch Series 8 (45mm)"])
+    private_test(devices: ["Apple Watch Series 8 (45mm)"], result: "apple_watch")
   end
 
   desc "Build and test for Apple TV"
   lane :test_apple_tv do
-    private_test(devices: ["Apple TV 4K (3rd generation)"])
+    private_test(devices: ["Apple TV 4K (3rd generation)"], result: "apple_tv")
   end
 
   desc "Build and test for Vision Pro"
   lane :test_vision_pro do
-    private_test(devices: ["Apple Vision Pro"])
+    private_test(devices: ["Apple Vision Pro"], result: "vision_pro")
   end
 
   desc "Internal build and test lane"
@@ -61,7 +61,8 @@ platform :ios do
       concurrent_workers: 1,
       max_concurrent_simulators: 1,
       result_bundle: true,
-      output_directory: "."
+      output_directory: ".",
+      result_bundle_path: "./#{options[:result]}.xcresult"
     )
   end
 

@@ -45,12 +45,12 @@ jobs:
       # Remove the `runsonlabels: '["macOS", "self-hosted"]'` lines if you do not administer your own GitHub Runners.
       runsonlabels: '["macOS", "self-hosted"]'
       fastlanelane: test_${{ matrix.platform }}
-      artifactname: TemplateApplication_${{ matrix.platform }}.xcresult
+      artifactname: ${{ matrix.platform }}.xcresult
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: [buildandtest]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: TemplateApplication_iphone.xcresult TemplateApplication_ipad.xcresult TemplateApplication_apple_watch.xcresult TemplateApplication_apple_tv.xcresult TemplateApplication_vision_pro.xcresult
+      coveragereports: iphone.xcresult ipad.xcresult apple_watch.xcresult apple_tv.xcresult vision_pro.xcresult
     secrets:
       token: ${{ secrets.CODECOV_TOKEN }}
