@@ -63,6 +63,14 @@ Build and test for Apple TV
 
 Build and test for Vision Pro
 
+### ios test_macos
+
+```sh
+[bundle exec] fastlane ios test_macos
+```
+
+Build and test for macOS
+
 ### ios codeql
 
 ```sh

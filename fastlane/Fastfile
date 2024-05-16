@@ -21,6 +21,7 @@ platform :ios do
     test_apple_watch
     test_apple_tv
     test_vision_pro
+    test_macos
   end
 
   desc "Build and test for iPhone"
@@ -48,6 +49,11 @@ platform :ios do
     private_test(devices: ["Apple Vision Pro"], result: "vision_pro")
   end
 
+  desc "Build and test for macOS"
+  lane :test_macos do
+    private_test(devices: ["My Mac"], result: "macos", destination: "platform=macOS")
+  end
+
   desc "Internal build and test lane"
   private_lane :private_test do |options|
     run_tests(
@@ -60,6 +66,7 @@ platform :ios do
       prelaunch_simulator: false,
       concurrent_workers: 1,
       max_concurrent_simulators: 1,
+      destination: options[:destination],
       result_bundle: true,
       output_directory: ".",
       result_bundle_path: "./#{options[:result]}.xcresult"
