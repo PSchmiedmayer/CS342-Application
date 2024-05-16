@@ -39,21 +39,29 @@ Build and test for iPhone
 
 Build and test for iPad
 
-### ios test_watch
+### ios test_apple_watch
 
 ```sh
-[bundle exec] fastlane ios test_watch
+[bundle exec] fastlane ios test_apple_watch
 ```
 
-Build and test for Watch
+Build and test for Apple Watch
 
-### ios test_visionos
+### ios test_apple_tv
 
 ```sh
-[bundle exec] fastlane ios test_visionos
+[bundle exec] fastlane ios test_apple_tv
 ```
 
-Build and test for VisionOS
+Build and test for Apple TV
+
+### ios test_vision_pro
+
+```sh
+[bundle exec] fastlane ios test_vision_pro
+```
+
+Build and test for Vision Pro
 
 ### ios codeql
 

@@ -8,6 +8,10 @@
 
 name: Build and Test
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   pull_request:
   workflow_dispatch:
@@ -33,19 +37,20 @@ jobs:
     name: Build and Test
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     strategy:
+      fail-fast: false
       matrix:
         platform: [iphone, ipad, apple_watch, apple_tv, vision_pro]
     with:
       # We use the self-hosted runners as the main GitHub Action runners do not have the necessary performance.
       # Remove the `runsonlabels: '["macOS", "self-hosted"]'` lines if you do not administer your own GitHub Runners.
       runsonlabels: '["macOS", "self-hosted"]'
-      fastlanelane: test-${{ matrix.platform }}
-      artifactname: TemplateApplication-${{ matrix.platform }}.xcresult
+      fastlanelane: test_${{ matrix.platform }}
+      artifactname: TemplateApplication_${{ matrix.platform }}.xcresult
   uploadcoveragereport:
     name: Upload Coverage Report
     needs: [buildandtest]
     uses: StanfordBDHG/.github/.github/workflows/create-and-upload-coverage-report.yml@v2
     with:
-      coveragereports: TemplateApplication-iphone.xcresult TemplateApplication-ipad.xcresult TemplateApplication-apple_watch.xcresult TemplateApplication-apple_tv.xcresult TemplateApplication-vision_pro.xcresult
+      coveragereports: TemplateApplication_iphone.xcresult TemplateApplication_ipad.xcresult TemplateApplication_apple_watch.xcresult TemplateApplication_apple_tv.xcresult TemplateApplication_vision_pro.xcresult
     secrets:
       token: ${{ secrets.CODECOV_TOKEN }}
