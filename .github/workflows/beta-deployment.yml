@@ -26,7 +26,7 @@ jobs:
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: buildandtest
-    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@environments
+    uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
     concurrency:
       group: appstoreconnect
     permissions:
