@@ -29,4 +29,4 @@ xcuserdata/
 # Tests
 report.junit
 report.html
-TemplateApplication.xcresult
+*.xcresult

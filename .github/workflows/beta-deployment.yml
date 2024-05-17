@@ -19,13 +19,20 @@ jobs:
     name: Build and Test
     uses: ./.github/workflows/build-and-test.yml
     permissions:
-      security-events: write
+      contents: read
       actions: read
+      security-events: write
+    secrets: inherit
   iosapptestflightdeployment:
     name: iOS App TestFlight Deployment
     needs: buildandtest
     uses: StanfordBDHG/.github/.github/workflows/xcodebuild-or-fastlane.yml@v2
-    secrets: inherit
+    concurrency:
+      group: appstoreconnect
+    permissions:
+      contents: read
     with:
       setupsigning: true
       fastlanelane: beta
+      environment: beta
+    secrets: inherit
