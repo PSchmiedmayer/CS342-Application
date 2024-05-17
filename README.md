@@ -11,7 +11,7 @@ SPDX-License-Identifier: MIT
 # Template Application
 
 [![Build and Test](https://github.com/StanfordBDHG/TemplateApplication/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/StanfordBDHG/TemplateApplication/actions/workflows/build-and-test.yml)
-[![codecov](https://codecov.io/gh/StanfordBDHG/Template-Application/branch/main/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/Template-Application)
+[![codecov](https://codecov.io/gh/StanfordBDHG/TemplateApplication/graph/badge.svg?token=ezY7o5Trsk)](https://codecov.io/gh/StanfordBDHG/TemplateApplication)
 [![DOI](https://zenodo.org/badge/587923964.svg)](https://zenodo.org/badge/latestdoi/587923964)
 
 This repository contains the StanfordBDHG Template Application. It serves as a template repository for projects requiring a mobile application using continuous integration and continuous delivery setup.
