@@ -59,6 +59,10 @@ platform :ios do
     run_tests(
       skip_build: true,
       derived_data_path: ".derivedData",
+      xcargs: [
+        "-skipPackagePluginValidation",
+        "-skipMacroValidation"
+      ],
       code_coverage: true,
       devices: options[:devices],
       force_quit_simulator: true,
@@ -78,7 +82,11 @@ platform :ios do
     build_app(
       skip_archive: true,
       skip_codesigning: true,
-      derived_data_path: ".derivedData"
+      derived_data_path: ".derivedData",
+      xcargs: [
+        "-skipPackagePluginValidation",
+        "-skipMacroValidation"
+      ]
     )
   end
 
@@ -86,6 +94,10 @@ platform :ios do
   lane :build do
     build_app(
       derived_data_path: ".derivedData",
+      xcargs: [
+        "-skipPackagePluginValidation",
+        "-skipMacroValidation"
+      ],
       destination: "generic/platform=iOS",
       output_directory: ".build",
       archive_path: ".build/TemplateApplication.xcarchive",
